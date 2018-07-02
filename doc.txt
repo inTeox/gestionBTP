@@ -1,0 +1,38 @@
+SELECT * FROM DALIRENOV.TRAVAILLE FETCH FIRST 100 ROWS ONLY;
+
+ INSERT INTO TRAVAILLE ( IDPERSONNE, IDCHANTIER, 
+                 DATEPLANNING, PRESENCEAMPLANNING,  
+                 PRESENCEPMPLANNING,  
+                 DCTRAVAILLE, DFTRAVAILLE) 
+                 VALUES (  1 , 
+                           1,
+                           '2017-03-22' , 
+                           true  ,  
+                           true  , 
+                           '2018-06-22 13:25:34.677'  , 
+                           '2018-06-22 13:25:34.677' 
+                           ) ;
+=================================================================================
+private String chargSqlTravail(String sql_insert, Travail travail) {    
+    sql_insert
+                = "INSERT INTO TRAVAILLE ( IDPERSONNE, IDCHANTIER, "
+                + " DATEPLANNING, PRESENCEAMPLANNING,  "
+                + "PRESENCEPMPLANNING,  "
+                + " DCTRAVAILLE, DFTRAVAILLE) "
+                + " VALUES ( " + travail.getEmploye().getIdPersonne() + " , "
+                + "  " + travail.getChantier().getIdChantier() + " , "
+                + " '" + travail.getdatePlanning()+ "' , " 
+                + "  '" + travail.isPresenceAM() + "' , " 
+                + "  '" + travail.isPresencePM() + "' , "
+                + "  '" + travail.getDcTravail() + "' , "
+                + "  '" + travail.getDfTravail() + "'  "
+                +    ") "
+               ;   
+
+Avertissement:   StandardWrapperValve[CreationTravail]: Servlet.service() for servlet CreationTravail threw exception
+java.lang.NullPointerException
+	at com.dl1.beans.Travail.chargSqlTravail(Travail.java:295)
+	at com.dl1.beans.Travail.insertTravail(Travail.java:158)
+	at com.dl1.servlet.CreationTravail.processRequest(CreationTravail.java:100)
+	at com.dl1.servlet.CreationTravail.doPost(CreationTravail.java:140)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
