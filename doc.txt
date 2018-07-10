@@ -1,3 +1,70 @@
+http://localhost:33064/gestionBTP/Page1
+===============================================================================
+PROBLEME : insertion employe : la date de naissance et le boolean
+===============================================================================
+passage 10
+Infos:   Personne select : connexion faite
+Infos:   done !
+Infos:   table personnes :{1=Personne{idPersonne=1, nom=Thebault, prenom=Martine, type=prospect    , telephone=0623456711, mobile=null, mail=mthebo@fnt.fr, noteP=null, dateDebutP=2018-07-10 17:48:36.309, dateFinP=2018-07-10 17:48:36.309}, 2=Personne{idPersonne=2, nom=Thebault, prenom=Victoire, type=prospect    , telephone=0654567899, mobile=0235678900, mail=tvictoire99@sfr.fr, noteP=null, dateDebutP=2018-07-10 17:53:09.332, dateFinP=2018-07-10 17:53:09.332}, 3=Personne{idPersonne=3, nom=tivert, prenom=orlando, type=prospect    , telephone=0681330712, mobile=null, mail=tiverorl@fct.com, noteP=null, dateDebutP=2018-07-10 17:54:37.778, dateFinP=2018-07-10 17:54:37.778}, 4=Personne{idPersonne=4, nom=Hervalon, prenom=herve, type=prospect    , telephone=0176334590, mobile=null, mail=hervalon99@grd.net, noteP=null, dateDebutP=2018-07-10 17:56:05.863, dateFinP=2018-07-10 17:56:05.863}, 5=Personne{idPersonne=5, nom=crabe, prenom=olivier, type=prospect    , telephone=0623669912, mobile=null, mail=crabe123@free.fr, noteP=A revoir, dateDebutP=2018-07-10 17:58:23.218, dateFinP=2018-07-10 17:58:23.218}, 6=Personne{idPersonne=6, nom=Goldberg, prenom=Victor, type=prospect    , telephone=0143481731, mobile=0682819636, mail=vigoldberg@aol.com, noteP=null, dateDebutP=2018-07-10 18:05:24.72, dateFinP=2018-07-10 18:05:24.72}, 7=Personne{idPersonne=7, nom=Herzog, prenom=Maurice, type=prospect    , telephone=0145456900, mobile=null, mail=HKLton@sofitel.fr, noteP=null, dateDebutP=2018-07-10 18:06:41.438, dateFinP=2018-07-10 18:06:41.438}, 8=Personne{idPersonne=8, nom=Ramarossaanina, prenom=amina, type=prospect    , telephone=0133876788, mobile=null, mail=Rama_Amina@free.fr, noteP=null, dateDebutP=2018-07-10 18:08:42.965, dateFinP=2018-07-10 18:08:42.965}, 9=Personne{idPersonne=9, nom=gelin, prenom=daniel, type=prospect    , telephone=0656990023, mobile=null, mail=gelindaniel@aol.com, noteP=null, dateDebutP=2018-07-10 18:09:56.563, dateFinP=2018-07-10 18:09:56.563}, 10=Personne{idPersonne=10, nom=grevious, prenom=cedric, type=prospect    , telephone=0734567899, mobile=null, mail=grevious23@dpj.fr, noteP=null, dateDebutP=2018-07-10 18:11:18.668, dateFinP=2018-07-10 18:11:18.668}, 11=Personne{idPersonne=11, nom=cordoba, prenom=henri, type=prospect    , telephone=0645668900, mobile=null, mail=cordobahenri@gmail.com, noteP=null, dateDebutP=2018-07-10 18:12:25.717, dateFinP=2018-07-10 18:12:25.717}}
+Infos:   CreationEmployee -2--> table des personnes :11
+Infos:   CreationEmploye : creer un employe
+Infos:   insertEmploye: --> SQL_UPDATE : UPDATE PERSONNE  set DATENAISSEMPLOYE = ?  ,  ANEXPERIENCE = ?  ,  FONCTIONEMPLOYE = ?  ,  NUMEROSSEMPLOYE = ?  ,  NATIONALITEEMPLOYE = ?  ,  TITRESEJOUREMPLOYE = ?  ,  PERMISTRAVAILEMPLOYE = ?  ,  CODEACCESEMPLOYE = ?  ,  EQUIPEBASEEMPLOYE = ?  ,  DCEMPLOYE = ?  ,  DFEMPLOYE = ?  WHERE  IDPERSONNE = ?
+Infos:   Employe : connexion faite
+Infos:   dateFormatee0055-09-29
+Grave:   SQl error : 30000/Le format de la chaîne de caractères n'est pas valide pour le type BOOLEAN.
+Infos:   CreationEmploye PAS ERREUR
+Infos:   CreationEmploye --3-> table des personnes :11
+Infos:   CreationCarnetAdresse -->SESSION4d0bec659fd4bf0ab8adc1b4004a
+Infos:   false
+Infos:   CreationCarnetAdresses : entree
+
+================================================================================
+================================================================================
+CORRECTION
+================================================================================
+j'ai reussi l'alignement en modifiant le CSS :
+form label {
+    display: inline-block;
+    width: 200px;
+    margin: 3px 0px 0px 0px;
+}
+et en modifiant la JSP inc_adresse_form. j'ai misles <TD> et les <TR> sur 
+les zones.
+================================================================================
+ utiliser css afin d'exploiter au mieux les tags html:
+
+1
+2
+3
+4
+form label {
+    display: inline-block;
+    width: 200px;
+}
+
+<form>
+    <p><label for="input0">Input 0:</label><input name="input0" /></p>
+    <p><label for="input1">Input 1:</label><input name="input1" /></p>
+    <p><label for="input2">Input 2:</label><input name="input2" /></p>
+</form>
+
+
+
+
+
+
+================================================================================
+<ul><PRE>
+Adresse&nbsp;:      <input name=adresse1><br>
+Ville&nbsp;:        <input name=city size=20 maxlength=20><br>
+Code postal&nbsp;:  <input name=code postal size=10 maxlength=10><br>
+Mot de passe&nbsp;: <input type=password name=pwrd><br>
+ 
+</PRE></ul>
+
+
+Avec la balise PRE les input restent placé comme ils sont dans le code. Alors que sans les espaces sont supprimés et les imput viennent se coller au texte qui les précédent.
+=======================================================================================================================
 SELECT * FROM DALIRENOV.TRAVAILLE FETCH FIRST 100 ROWS ONLY;
 
  INSERT INTO TRAVAILLE ( IDPERSONNE, IDCHANTIER, 

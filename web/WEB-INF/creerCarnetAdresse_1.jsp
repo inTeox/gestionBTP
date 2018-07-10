@@ -15,7 +15,7 @@
         <table border="0">
             <tbody>
                 <tr>
-                    <td><label for="idPersonne">N°</label> 
+                    <td><label for="idPersonne">N° &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                     <input type="text" id="idPersonne" name="idPersonne" 
                            value="<c:out value="${personne.idPersonne}"/>" size="10" />
                     <span class="erreur">${form.erreurs['idPersonne']}</span><BR> </BR>                   
@@ -28,7 +28,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="nomPersonne">Nom <span class="requis">*</span></label> 
+                    <td><label for="nomPersonne">Nom <span class="requis">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                     <input type="text" id="nomPersonne" name="nomPersonne" 
                            value="<c:out value="${personne.nom}"/>" size="30" maxlength="50" />
                     <span class="erreur">${form.erreurs['nomPersonne']}</span> </td>
@@ -40,14 +40,12 @@
                 </tr>
                 <BR> </BR>
             </tbody>
-        </table>  
-        <table border="0">        
+        </table>       
         <c:import url="/inc/inc_adresse_form.jsp" />
-        </table>
         <table border="0">
             <tbody>
                 <tr>
-                    <td><label for="telephone">téléphone <span class="requis">*</span></label> 
+                    <td><label for="telephone">téléphone <span class="requis">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                     <input type="text" id="telephone" name="telephone" 
                            value="<c:out value="${personne.telephone}"/>" size="10" maxlength="10"/>
                     <span class="erreur">${form.erreurs['telephone']}</span>                 
@@ -60,7 +58,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="mail">mail </label> 
+                    <td><label for="mail">mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                     <input type="text" id="mail" name="mail" 
                            value="<c:out value="${personne.mail}"/>" size="30" maxlength="250" />
                     <span class="erreur">${form.erreurs['mail']}</span> </td>

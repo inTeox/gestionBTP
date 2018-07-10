@@ -22,7 +22,7 @@ legend {
     color: #611728;
 }
 form label {
-    float: left;
+    display: inline-block;
     width: 200px;
     margin: 3px 0px 0px 0px;
 }

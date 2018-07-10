@@ -69,7 +69,7 @@ public class CreationEmploye extends HttpServlet {
         request.setAttribute( ATT_FORM, form );
         
         Personne personne = new Personne();
-        personnes =  (HashMap<Long, Personne>) personne.lister("employe");
+        personnes =  (HashMap<Long, Personne>) personne.lister("prospect");
         System.out.println("table personnes :" + personnes.toString()) ;
         session.setAttribute( SESSION_PERSONNES, personnes );
         System.out.println("CreationEmployee -2--> table des personnes :" + personnes.size());
